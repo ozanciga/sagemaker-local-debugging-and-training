@@ -55,7 +55,7 @@ echo 'export PATH=/usr/local/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-- Then pull the image from ECR (sample image with Pytorch and Huggingface Transformers libraries):
+- Then pull the image from ECR (sample image with Pytorch and Huggingface Transformers libraries), (optionally add `--profile [name]` to `aws ecr` call):
 ```
 aws ecr get-login-password --region us-west-2 | sudo docker login --username AWS --password-stdin 763104351884.dkr.ecr.us-west-2.amazonaws.com
 sudo docker pull 763104351884.dkr.ecr.us-west-2.amazonaws.com/huggingface-pytorch-training:2.1.0-transformers4.36.0-gpu-py310-cu121-ubuntu20.04
